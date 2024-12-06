@@ -43,7 +43,17 @@ $current_category = get_category($conn, $id);
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="bg-light">
+	<!-- <style>
+        html {
+            scroll-padding: 5rem;
+        }
+        .menu-item:hover,
+        .menu-item.active {
+            background-color:mediumaquamarine;
+        }
+	</style> -->
+
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <div class="container-fluid">
@@ -67,6 +77,7 @@ $current_category = get_category($conn, $id);
 		          <a class="nav-link" 
 		             href="#">About</a>
 		        </li>
+
 		        <li class="nav-item">
 		          <?php if (isset($_SESSION['user_id'])) {?>
 		          	<a class="nav-link" 
@@ -75,13 +86,24 @@ $current_category = get_category($conn, $id);
 		          <a class="nav-link" 
 		             href="login.php">Login</a>
 		          <?php } ?>
-
 		        </li>
+
+				<!-- <li class="nav-item">
+				<?php if (isset($_SESSION['user_id'])) {?>
+		          	<a class="nav-link" 
+		             href="#">Profile</a>
+		          <?php }else{ ?>
+		          <a class="nav-link" 
+		             href="loginCustomer.php">Login</a>
+		          <?php } ?>
+		        </li> -->
+
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
-		<h1 class="display-4 p-3 fs-3"> 
+
+		<h1 class="display-4 fs-3 my-5"> 
 			<a href="index.php"
 			   class="nd">
 				<img src="img/back-arrow.PNG" 
@@ -89,6 +111,20 @@ $current_category = get_category($conn, $id);
 			</a>
 		   <?=$current_category['name']?>
 		</h1>
+		
+
+
+
+
+
+
+
+
+
+
+
+		
+
 		<div class="d-flex pt-3">
 			<?php if ($books == 0){ ?>
 				<div class="alert alert-warning 
@@ -100,6 +136,7 @@ $current_category = get_category($conn, $id);
 			    There is no book in the database
 		       </div>
 			<?php }else{ ?>
+
 			<div class="pdf-list d-flex flex-wrap">
 				<?php foreach ($books as $book) { ?>
 				<div class="card m-1">
@@ -144,37 +181,39 @@ $current_category = get_category($conn, $id);
 			</div>
 		<?php } ?>
 
-		<div class="category">
-			<!-- List of categories -->
-			<div class="list-group">
-				<?php if ($categories == 0){
-					// do nothing
-				}else{ ?>
-				<a href="#"
-				   class="list-group-item list-group-item-action active">Category</a>
-				   <?php foreach ($categories as $category ) {?>
-				  
-				   <a href="category.php?id=<?=$category['id']?>"
-				      class="list-group-item list-group-item-action">
-				      <?=$category['name']?></a>
-				<?php } } ?>
-			</div>
+			<div class="col-lg-2 ms-auto">
+				<div class="category">
+					<!-- List of categories -->
+					<div class="list-group">
+						<?php if ($categories == 0){
+							// do nothing
+						}else{ ?>
+						<a href="#"
+						class="list-group-item list-group-item-action active">Category</a>
+						<?php foreach ($categories as $category ) {?>
+						
+						<a href="category.php?id=<?=$category['id']?>"
+							class="list-group-item list-group-item-action">
+							<?=$category['name']?></a>
+						<?php } } ?>
+					</div>
 
-			<!-- List of authors -->
-			<div class="list-group mt-5">
-				<?php if ($authors == 0){
-					// do nothing
-				}else{ ?>
-				<a href="#"
-				   class="list-group-item list-group-item-action active">Author</a>
-				   <?php foreach ($authors as $author ) {?>
-				  
-				   <a href="author.php?id=<?=$author['id']?>"
-				      class="list-group-item list-group-item-action">
-				      <?=$author['name']?></a>
-				<?php } } ?>
+					<!-- List of authors -->
+					<div class="list-group mt-5">
+						<?php if ($authors == 0){
+							// do nothing
+						}else{ ?>
+						<a href="#"
+						class="list-group-item list-group-item-action active">Author</a>
+						<?php foreach ($authors as $author ) {?>
+						
+						<a href="author.php?id=<?=$author['id']?>"
+							class="list-group-item list-group-item-action">
+							<?=$author['name']?></a>
+						<?php } } ?>
+					</div>
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 </body>
