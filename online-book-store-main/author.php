@@ -136,6 +136,7 @@ $categories = get_all_categories($conn);
 			    There is no book in the database
 		       </div>
 			<?php }else{ ?>
+				
 			<div class="pdf-list d-flex flex-wrap">
 				<?php foreach ($books as $book) { ?>
 				<div class="card m-1">
