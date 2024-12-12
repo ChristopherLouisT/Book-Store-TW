@@ -1,14 +1,5 @@
-<?php 
+<?php
 session_start();
-
-
-
-
-
-
-
-
-
 
 # Database Connection File
 include "db_conn.php";
@@ -25,8 +16,7 @@ $authors = get_all_author($conn);
 include "php/func-category.php";
 $categories = get_all_categories($conn);
 
-
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,62 +51,62 @@ $categories = get_all_categories($conn);
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
-		    <div class="collapse navbar-collapse" 
+		    <div class="collapse navbar-collapse"
 		         id="navbarSupportedContent">
 		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		        <li class="nav-item">
-		          <a class="nav-link active" 
-		             aria-current="page" 
+		          <a class="nav-link active"
+		             aria-current="page"
 		             href="index.php">Store</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" 
+		          <a class="nav-link"
 		             href="#">Contact</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" 
+		          <a class="nav-link"
 		             href="#">About</a>
 		        </li>
 
 		        <li class="nav-item">
 		          <?php if (isset($_SESSION['user_id'])) {?>
-		          	<a class="nav-link" 
+		          	<a class="nav-link"
 		             href="logoutCustomer.php">LogOut</a>
-		          <?php }else{ ?>
-		          <a class="nav-link" 
+		          <?php } else {?>
+		          <a class="nav-link"
 		             href="signup.php">SignUp</a>
-		          <?php } ?>
+		          <?php }?>
 		        </li>
 
 				<li class="nav-item">
 				<?php if (isset($_SESSION['user_id'])) {?>
-		          	<a class="nav-link" 
+		          	<a class="nav-link"
 		             href="#">Profile</a>
-		          <?php }else{ ?>
-		          <a class="nav-link" 
+		          <?php } else {?>
+		          <a class="nav-link"
 		             href="loginCustomer.php">Login</a>
-		          <?php } ?>
+		          <?php }?>
 		        </li>
-				
+
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
-		
+
 		<form action="search.php"
-             method="get" 
+             method="get"
              style="width: 100%; max-width: 30rem">
 
 			<div class="input-group my-5">
-				<input type="text" 
+				<input type="text"
 						class="form-control"
-						name="key" 
-						placeholder="Search Book..." 
-						aria-label="Search Book..." 
+						name="key"
+						placeholder="Search Book..."
+						aria-label="Search Book..."
 						aria-describedby="basic-addon2">
 
 				<button class="input-group-text
-								btn btn-primary" 
+								btn btn-primary"
 						id="basic-addon2">
 						<img src="img/search.png"
 							width="20">
@@ -126,19 +116,19 @@ $categories = get_all_categories($conn);
        </form>
 
 		<div class="d-flex pt-3">
-			<?php if ($books == 0){ ?>
-				<div class="alert alert-warning 
-        	            text-center p-5" 
+			<?php if ($books == 0) {?>
+				<div class="alert alert-warning
+        	            text-center p-5"
         	     role="alert">
-        	     <img src="img/empty.png" 
+        	     <img src="img/empty.png"
         	          width="100">
         	     <br>
 			    There is no book in the database
 		       </div>
-			<?php }else{ ?>
-				
+			<?php } else {?>
+
 			<div class="pdf-list d-flex flex-wrap">
-				<?php foreach ($books as $book) { ?>
+				<?php foreach ($books as $book) {?>
 				<div class="card m-1">
 					<img src="uploads/cover/<?=$book['cover']?>"
 					     class="card-img-top">
@@ -148,69 +138,72 @@ $categories = get_all_categories($conn);
 						</h5>
 						<p class="card-text">
 							<i><b>By:
-								<?php foreach($authors as $author){ 
-									if ($author['id'] == $book['author_id']) {
-										echo $author['name'];
-										break;
-									}
-								?>
+								<?php foreach ($authors as $author) {
+    if ($author['id'] == $book['author_id']) {
+        echo $author['name'];
+        break;
+    }
+    ?>
 
-								<?php } ?>
+								<?php
+}?>
 							<br></b></i>
-							<?=$book['description']?>
+							<?= substr($book['description'], 0, 100) ?>
 							<br><i><b>Category:
-								<?php foreach($categories as $category){ 
-									if ($category['id'] == $book['category_id']) {
-										echo $category['name'];
-										break;
-									}
-								?>
+								<?php foreach ($categories as $category) {
+    if ($category['id'] == $book['category_id']) {
+        echo $category['name'];
+        break;
+    }
+    ?>
 
-								<?php } ?>
+								<?php
+}?>
 							<br></b></i>
 						</p>
-                       <a href="uploads/files/<?=$book['file']?>"
+						<a href="detail.php?id=<?=$book['id']?>"
+                          class="btn btn-success">Buy Book</a>
+                       <!-- <a href="uploads/files/<?=$book['file']?>"
                           class="btn btn-success">Open</a>
-
                         <a href="uploads/files/<?=$book['file']?>"
                           class="btn btn-primary"
-                          download="<?=$book['title']?>">Download</a>
+                          download="<?=$book['title']?>">Download</a> -->
 					</div>
 				</div>
-				<?php } ?>
+				<?php }?>
 			</div>
-		<?php } ?>
+		<?php }?>
 
 			<div class="col-lg-2 ms-auto">
 				<div class="category">
 					<!-- List of categories -->
 					<div class="list-group">
-						<?php if ($categories == 0){
-							// do nothing
-						}else{ ?>
+						<?php if ($categories == 0) {
+    // do nothing
+} else {?>
 						<a href="#"
 						class="list-group-item list-group-item-action active">Category</a>
-						<?php foreach ($categories as $category ) {?>
-						
+						<?php foreach ($categories as $category) {?>
+
 						<a href="category.php?id=<?=$category['id']?>"
 							class="list-group-item list-group-item-action">
 							<?=$category['name']?></a>
-						<?php } } ?>
+						<?php }}?>
 					</div>
 
 					<!-- List of authors -->
 					<div class="list-group mt-5">
-						<?php if ($authors == 0){
-							// do nothing
-						}else{ ?>
+						<?php if ($authors == 0) {
+    // do nothing
+} else {?>
 						<a href="#"
 						class="list-group-item list-group-item-action active">Author</a>
-						<?php foreach ($authors as $author ) {?>
-						
+						<?php foreach ($authors as $author) {?>
+
 						<a href="author.php?id=<?=$author['id']?>"
 							class="list-group-item list-group-item-action">
 							<?=$author['name']?></a>
-						<?php } } ?>
+						<?php }}?>
 					</div>
 				</div>
 			</div>
