@@ -143,31 +143,26 @@ $categories = get_all_categories($conn);
 									echo $author['name'];
 									break;
 								}
-							?>
-
-								<?php
-}?>
+							}?>
 							<br></b></i>
 							<?= substr($book['description'], 0, 100) ?>
+							
 							<br><i><b>Category:
-								<?php foreach ($categories as $category) {
-    if ($category['id'] == $book['category_id']) {
-        echo $category['name'];
-        break;
-    }
-    ?>
+							<?php foreach ($categories as $category) {
+								if ($category['id'] == $book['category_id']) {
+									echo $category['name'];
+									break;
+								}
+							}?>
 
-			<?php
-}?>
-							<br></b></i>
-						</p>
-						<a href="detail.php?id=<?=$book['id']?>"
-                          class="btn btn-success">Buy Book</a>
-                       <!-- <a href="uploads/files/<?=$book['file']?>"
-                          class="btn btn-success">Open</a>
-                        <a href="uploads/files/<?=$book['file']?>"
-                          class="btn btn-primary"
-                          download="<?=$book['title']?>">Download</a> -->
+							<br></b></i></p>
+							<a href="detail.php?id=<?=$book['id']?>"
+							class="btn btn-success">Buy Book</a>
+							<!-- <a href="uploads/files/<?=$book['file']?>"
+							class="btn btn-success">Open</a>
+							<a href="uploads/files/<?=$book['file']?>"
+							class="btn btn-primary"
+							download="<?=$book['title']?>">Download</a> -->
 					</div>
 				</div>
 				<?php }?>
@@ -179,8 +174,8 @@ $categories = get_all_categories($conn);
 					<!-- List of categories -->
 					<div class="list-group">
 						<?php if ($categories == 0) {
-    // do nothing
-} else {?>
+							// do nothing
+						} else {?>
 						<a href="#"
 						class="list-group-item list-group-item-action active">Category</a>
 						<?php foreach ($categories as $category) {?>
@@ -194,8 +189,8 @@ $categories = get_all_categories($conn);
 					<!-- List of authors -->
 					<div class="list-group mt-5">
 						<?php if ($authors == 0) {
-    // do nothing
-} else {?>
+							// do nothing
+						} else {?>
 						<a href="#"
 						class="list-group-item list-group-item-action active">Author</a>
 						<?php foreach ($authors as $author) {?>
