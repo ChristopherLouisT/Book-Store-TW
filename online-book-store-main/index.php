@@ -138,12 +138,12 @@ $categories = get_all_categories($conn);
 						</h5>
 						<p class="card-text">
 							<i><b>By:
-								<?php foreach ($authors as $author) {
-    if ($author['id'] == $book['author_id']) {
-        echo $author['name'];
-        break;
-    }
-    ?>
+							<?php foreach ($authors as $author) {
+								if ($author['id'] == $book['author_id']) {
+									echo $author['name'];
+									break;
+								}
+							?>
 
 								<?php
 }?>
@@ -157,7 +157,7 @@ $categories = get_all_categories($conn);
     }
     ?>
 
-								<?php
+			<?php
 }?>
 							<br></b></i>
 						</p>
