@@ -154,7 +154,6 @@ function printExampleWarningMessage()
 						href="loginCustomer.php">Login</a>
 					<?php }?>
 					</li>
-
 				</ul>
 				</div>
 			</div>
@@ -203,7 +202,7 @@ function printExampleWarningMessage()
                         <div class="col-md-3">
                                 <img src="uploads/cover/<?=$book['cover']?>" class="card-img-top">
                                 <div class="card-body">
-                                    <button type='button' class='btn btn-success' onclick="bayar()">Buy Book</button>
+                                    <button type='button' class='btn btn-success' onclick="bayar()">Buy</button>
                                 </div> <!-- tutup div punyae card body -->
                         </div>
                         <div class="col-md-9">

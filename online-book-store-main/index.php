@@ -166,7 +166,7 @@ include "css/style-bookstore.php";
 								<?= substr($book['description'], 0, 100) . "..."; ?>
 							</p>
 							<a href="detail.php?id=<?=$book['id']?>"
-							class="btn btn-success">Buy Book</a>
+							class="btn btn-success">Buy</a>
 						</div>
 					</div>
 					
@@ -228,6 +228,5 @@ include "css/style-bookstore.php";
 			</div>
 		</div> <!-- Row Div -->
 	</div> <!-- Container Div-->
-	
 </body>
 </html>

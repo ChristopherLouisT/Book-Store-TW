@@ -13,5 +13,4 @@ if($stmt->rowCount() == 0) {
     $stmt->execute([$iduser, $idbook]);
     echo "Buku sukses dibeli!";     
 }
-
 ?>
