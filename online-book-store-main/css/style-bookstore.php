@@ -3,8 +3,8 @@
 <style>
 /* Card img size */
 .card-img-top {
-    height: 350px;
-    object-fit: cover;
+    height: 400px;
+    object-fit: fill;
     border-radius: 5px;
 }
 
