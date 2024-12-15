@@ -34,6 +34,7 @@ $current_category = get_category($conn, $id);
 include "css/style-bookstore.php";
 
  ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,18 +102,8 @@ include "css/style-bookstore.php";
 			</nav>
 		</div>
 
-
-
-
-
-
-
-
-
-
-
 		<div class = "row g-0 mt-5">
-			<h1 class="display-4 fs-3 my-5">
+			<h1 class="display-4 fs-3 my-5"> 
 				<a href="index.php"
 				class="nd">
 					<img src="img/back-arrow.PNG" 
@@ -120,7 +111,8 @@ include "css/style-bookstore.php";
 				</a>
 			<?=$current_category['name']?>
 			</h1>
-			
+		
+		
 			<div class="d-flex pt-3">
 				<?php if ($books == 0){ ?>
 					<div class="alert alert-warning 
@@ -133,9 +125,9 @@ include "css/style-bookstore.php";
 				</div>
 				<?php }else{ ?>
 
-					<div class="pdf-list d-flex flex-wrap">
+				<div class="pdf-list d-flex flex-wrap">
 					<?php foreach ($books as $book) {?>
-					<div class="card m-1">
+					<div class="card m-1 book-card" data-id="<?=$book['id']?>">
 						<img src="uploads/cover/<?=$book['cover']?>"
 							class="card-img-top">
 						<div class="card-body">
@@ -177,11 +169,20 @@ include "css/style-bookstore.php";
 						</div>
 					</div>
 					
+					<!-- Popup Element -->
+					<div class="book-popup" id="popup-<?=$book['id']?>">
+					    <div class="popup-content">
+					        <h4><?=$book['title']?></h4>
+					        <p><?=$book['description']?></p>
+					    </div>
+					</div>
+
 					<?php }?>
 				</div>
 			<?php } ?>
 
 				<div class="col-lg-2 ms-auto">
+
 					<div class="category">
 						<!-- List of types -->
 						<div class="list-group">
@@ -199,38 +200,60 @@ include "css/style-bookstore.php";
 						</div>
 
 						<!-- List of categories -->
-						<div class="list-group">
-							<?php if ($categories == 0){
+						<div class="list-group mt-5">
+							<?php if ($categories == 0) {
 								// do nothing
-							}else{ ?>
+							} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Category</a>
-							<?php foreach ($categories as $category ) {?>
-							
+							<?php foreach ($categories as $category) {?>
+
 							<a href="category.php?id=<?=$category['id']?>"
 								class="list-group-item list-group-item-action">
 								<?=$category['name']?></a>
-							<?php } } ?>
+							<?php }}?>
 						</div>
 
 						<!-- List of authors -->
 						<div class="list-group mt-5">
-							<?php if ($authors == 0){
+							<?php if ($authors == 0) {
 								// do nothing
-							}else{ ?>
+							} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Author</a>
-							<?php foreach ($authors as $author ) {?>
-							
+							<?php foreach ($authors as $author) {?>
+
 							<a href="author.php?id=<?=$author['id']?>"
 								class="list-group-item list-group-item-action">
 								<?=$author['name']?></a>
-							<?php } } ?>
+							<?php }}?>
 						</div>
 					</div>
+					
 				</div>
-			</div>
+			</div> <!-- Test-->
 		</div>
 	</div>
+
+	<!-- script js popup -->
+	<script> 
+	    document.addEventListener('DOMContentLoaded', () => {
+	        const bookImages = document.querySelectorAll('.book-card img.card-img-top');
+		
+	        bookImages.forEach(image => {
+	            const bookId = image.closest('.book-card').getAttribute('data-id');
+	            const popup = document.getElementById(`popup-${bookId}`);
+
+	            image.addEventListener('click', () => {
+	                popup.style.display = 'flex';
+	            });
+
+	            popup.addEventListener('click', () => {
+	                popup.style.display = 'none';
+	            });
+	        });
+	    });
+	</script>
+	
 </body>
 </html>
