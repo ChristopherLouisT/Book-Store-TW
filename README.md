@@ -5,4 +5,5 @@ DL: 20 Desember 15.59
 Link Admin: localhost/nama_file/online-book-store-main/admin.php
 
 (FILE DI DRIVE JANGAN DIUBAH NAMANYA KARENA KONEK KE DATABASE, UPLOAD BOOK > 50 MB KE DRIVE KLO ADA NEXT)\
+(CARA AMBIL: ABIS KALIAN PULL / DOWNLOAD ZIP, DOWNLOAD PDF PDF DI DRIVE KE UPLOADS FILES)
 Link File PDF > 50MB:  https://drive.google.com/drive/folders/1X7Vwi4h4JcvIwUVvIukIeRyYur-cFXas?usp=sharing
