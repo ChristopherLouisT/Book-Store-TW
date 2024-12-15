@@ -11,7 +11,7 @@ $stmt->execute([$iduser, $idbook]);
 if($stmt->rowCount() == 0) {
     $stmt = $conn->prepare("INSERT INTO buybook VALUES (0, now(), ?, ?)");
     $stmt->execute([$iduser, $idbook]);
-    echo "sukses buy book";     
+    echo "Buku sukses dibeli!";     
 }
 
 ?>
