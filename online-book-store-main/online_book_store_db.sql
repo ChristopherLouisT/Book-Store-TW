@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2024 at 09:22 PM
+-- Generation Time: Dec 15, 2024 at 09:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -59,15 +59,15 @@ CREATE TABLE `authors` (
 INSERT INTO `authors` (`id`, `name`) VALUES
 (1, 'Jane Austen'),
 (2, 'George Orwell'),
-(6, 'Agatha Christie'),
-(7, 'Shiraishi Jougi'),
-(8, 'Satsuki Hiryuu'),
-(9, 'Nana Nanana'),
-(10, 'Geul Jengi S'),
-(11, 'Daisuke Aizawa'),
-(12, 'Kabochamasuku'),
-(13, 'Lee Kyung Min'),
-(14, 'Eunmilhi');
+(3, 'Agatha Christie'),
+(4, 'Shiraishi Jougi'),
+(5, 'Satsuki Hiryuu'),
+(6, 'Nana Nanana'),
+(7, 'Geul Jengi S'),
+(8, 'Daisuke Aizawa'),
+(9, 'Kabochamasuku'),
+(10, 'Lee Kyung Min'),
+(11, 'Eunmilhi');
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,9 @@ INSERT INTO `books` (`id`, `title`, `author_id`, `description`, `category_id`, `
 (17, 'Magic Academy’s Genius Blinker Chapter 1 - 10', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de39409cbb5.52476421.jpeg', '675de39409f423.40156114.pdf'),
 (18, 'Magic Academy’s Genius Blinker Chapter 11 - 20', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de4333b06f9.60935896.jpeg', '675de4333b2cb3.33337414.pdf'),
 (19, 'Magic Academy’s Genius Blinker Chapter 21 - 30', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de45761c699.20630705.jpeg', '675de457620054.48256838.pdf'),
-(20, 'Magic Academy’s Genius Blinker Chapter 31 - 40', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de478b59489.44760742.jpeg', '675de478b5d426.66854025.pdf');
+(20, 'Magic Academy’s Genius Blinker Chapter 31 - 40', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de478b59489.44760742.jpeg', '675de478b5d426.66854025.pdf'),
+(21, 'ELEPHANT CAN REMEMBER ', 3, 'Hercule Poirot berdiri di pinggir tebing, memandang bebatuan di bawah sana dan air laut yang memecah di antaranya. Di tempat dia berdiri, pernah ditemukan mayat sepasang suami-istri. Di sini, tiga minggu sebelumnya, seorang wanita berjalan dalam tidurnya, jatuh, dan tewas. Mengapa semua ini bisa terjadi? Hercule Poirot bersama sahabatnya, Mrs. Ariadne Oliver, penulis novel detektif kondang, harus melangkah mundur, menelusuri tragedi yang terjadi belasan tahun lalu demi kebahagiaan seorang gadis yang tidak bersalah.', 3, 56999, 5, 'elephant\'s can remember.jpg', 'gajah selalu ingat.pdf'),
+(22, 'The Murder of Roger Ackroyd', 3, '\"The Murder of Roger Ackroyd” tells the story of the murder of Roger Ackroyd, a wealthy man in a small community. Detective Hercule Poirot is called in to solve the case, which becomes complicated as secrets and deceptions within Ackroyd’s circle are revealed. As Poirot investigates, he uncovers surprising twists and exposes the true murderer.', 3, 50000, 5, 'the-murder-of-roger-ackroyd.jpg', 'The-Murder-of-Roger-Ackroyd-Agatha-Christie.pdf');
 
 -- --------------------------------------------------------
 
@@ -124,6 +126,13 @@ CREATE TABLE `buybook` (
   `user_id` int(11) DEFAULT NULL,
   `book_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `buybook`
+--
+
+INSERT INTO `buybook` (`id`, `tanggal`, `user_id`, `book_id`) VALUES
+(1, '2024-12-15', 99, 18);
 
 -- --------------------------------------------------------
 
@@ -166,7 +175,8 @@ INSERT INTO `types` (`id`, `name`) VALUES
 (1, 'Light Novel'),
 (2, 'Manga'),
 (3, 'Manhwa'),
-(4, 'Normal');
+(4, 'Normal'),
+(5, 'Novel');
 
 -- --------------------------------------------------------
 
@@ -243,7 +253,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `authors`
@@ -255,13 +265,13 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `buybook`
 --
 ALTER TABLE `buybook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -273,7 +283,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
