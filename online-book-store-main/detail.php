@@ -226,9 +226,9 @@ function printExampleWarningMessage()
             }
         }?>
         <br>
-        Price:
+        <h4>Price:
         <?= "Rp. " . substr($book['price'], 0)?>
-        </b></i>
+        </b></i></h4>
        <p><?=($book['description'])?>
                         </div>
                     </div>
