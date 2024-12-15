@@ -123,7 +123,7 @@ include "css/style-bookstore.php";
 
 					<div class="pdf-list d-flex flex-wrap">
 					<?php foreach ($books as $book) {?>
-					<div class="card m-1">
+					<div class="card m-1 book-card" data-id="<?=$book['id']?>">
 						<img src="uploads/cover/<?=$book['cover']?>"
 							class="card-img-top">
 						<div class="card-body">
@@ -164,6 +164,14 @@ include "css/style-bookstore.php";
 							class="btn btn-success">Buy Book</a>
 						</div>
 					</div>
+
+					<!-- Popup Element -->
+					<div class="book-popup" id="popup-<?=$book['id']?>">
+					    <div class="popup-content">
+					        <h4><?=$book['title']?></h4>
+					        <p><?=$book['description']?></p>
+					    </div>
+					</div>
 					
 					<?php }?>
 				</div>
@@ -172,5 +180,26 @@ include "css/style-bookstore.php";
 			</div>
 		</div>
 	</div>
+
+	<!-- script js popup -->
+	<script> 
+	    document.addEventListener('DOMContentLoaded', () => {
+	        const bookImages = document.querySelectorAll('.book-card img.card-img-top');
+		
+	        bookImages.forEach(image => {
+	            const bookId = image.closest('.book-card').getAttribute('data-id');
+	            const popup = document.getElementById(`popup-${bookId}`);
+
+	            image.addEventListener('click', () => {
+	                popup.style.display = 'flex';
+	            });
+
+	            popup.addEventListener('click', () => {
+	                popup.style.display = 'none';
+	            });
+	        });
+	    });
+	</script>
+
 </body>
 </html>
