@@ -38,18 +38,18 @@ include "css/style-bookstore.php";
 
 
 </head>
-<body class="bg-light">
+<body>
 
 	<div class="container">
 		<div class = "row">
+			
 			<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light fw-bolder" href="index.php">Online Book Store</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+					<span class="navbar-toggler-icon"></spa>
 				</button>
-				<div class="collapse navbar-collapse"
-					id="navbarSupportedContent">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
 					<a class="nav-link text-light rounded fw-bolder active"
@@ -84,6 +84,11 @@ include "css/style-bookstore.php";
 						href="loginCustomer.php">Login</a>
 					<?php }?>
 					</li>
+
+					<div class="d-flex">
+					    <!-- Tombol Dark Mode -->
+    					<button id="darkModeToggle" class="btn btn-outline-light ms-2">Dark Mode</button>
+					</div>
 
 				</ul>
 				</div>
@@ -237,25 +242,9 @@ include "css/style-bookstore.php";
 		</div> <!-- Row Div -->
 	</div> <!-- Container Div-->
 
-	<!-- script js popup -->
-	<script> 
-	    document.addEventListener('DOMContentLoaded', () => {
-	        const bookImages = document.querySelectorAll('.book-card img.card-img-top');
-		
-	        bookImages.forEach(image => {
-	            const bookId = image.closest('.book-card').getAttribute('data-id');
-	            const popup = document.getElementById(`popup-${bookId}`);
-
-	            image.addEventListener('click', () => {
-	                popup.style.display = 'flex';
-	            });
-
-	            popup.addEventListener('click', () => {
-	                popup.style.display = 'none';
-	            });
-	        });
-	    });
-	</script>
+	<!-- script js -->
+	<script src="popup.js"></script>
+	<script src="darkmode.js"></script>
 
 </body>
 </html>

@@ -49,7 +49,7 @@ include "css/style-bookstore.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 </head>
-<body class="bg-light">
+<body>
 
 	<div class="container">
 	<div class = "row">
@@ -59,7 +59,7 @@ include "css/style-bookstore.php";
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse"
+				<div class="collapse navbar-collapse" id="navbarSupportedContent"
 					id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
@@ -236,24 +236,8 @@ include "css/style-bookstore.php";
 	</div>
 
 	<!-- script js popup -->
-	<script> 
-	    document.addEventListener('DOMContentLoaded', () => {
-	        const bookImages = document.querySelectorAll('.book-card img.card-img-top');
-		
-	        bookImages.forEach(image => {
-	            const bookId = image.closest('.book-card').getAttribute('data-id');
-	            const popup = document.getElementById(`popup-${bookId}`);
+	<script src="popup.js"></script>
+	<script src="darkmode.js"></script>
 
-	            image.addEventListener('click', () => {
-	                popup.style.display = 'flex';
-	            });
-
-	            popup.addEventListener('click', () => {
-	                popup.style.display = 'none';
-	            });
-	        });
-	    });
-	</script>
-	
 </body>
 </html>

@@ -49,7 +49,7 @@ include "css/style-bookstore.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 </head>
-<body class="bg-light">
+<body>
 
 	<div class="container">
 	<div class = "row">
@@ -236,24 +236,8 @@ include "css/style-bookstore.php";
 	</div>
 
 	<!-- script js popup -->
-	<script> 
-	    document.addEventListener('DOMContentLoaded', () => {
-	        const bookImages = document.querySelectorAll('.book-card img.card-img-top');
-		
-	        bookImages.forEach(image => {
-	            const bookId = image.closest('.book-card').getAttribute('data-id');
-	            const popup = document.getElementById(`popup-${bookId}`);
-
-	            image.addEventListener('click', () => {
-	                popup.style.display = 'flex';
-	            });
-
-	            popup.addEventListener('click', () => {
-	                popup.style.display = 'none';
-	            });
-	        });
-	    });
-	</script>
+	<script src="popup.js"></script>
+	<script src="darkmode.js"></script>
 	
 </body>
 </html>
