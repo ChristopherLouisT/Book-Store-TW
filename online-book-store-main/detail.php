@@ -200,7 +200,7 @@ function printExampleWarningMessage()
         ?>
                     <div class="row">
                         <div class="col-md-3">
-                                <img src="uploads/cover/<?=$book['cover']?>" class="card-img-top">
+                                <img src="upload/cover/<?=$book['cover']?>" class="card-img-top">
                                 <div class="card-body">
                                     <button type='button' class='btn btn-success' onclick="bayar()">Buy</button>
                                 </div> <!-- tutup div punyae card body -->

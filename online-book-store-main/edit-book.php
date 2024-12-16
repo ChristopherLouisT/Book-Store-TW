@@ -213,7 +213,7 @@ if (isset($_SESSION['user_id']) &&
 						value="<?=$book['cover']?>" 
 						name="current_cover">
 
-					<a href="uploads/cover/<?=$book['cover']?>"
+					<a href="upload/cover/<?=$book['cover']?>"
 					class="link-dark">Current Cover</a>
 				</div>
 
@@ -230,7 +230,7 @@ if (isset($_SESSION['user_id']) &&
 						value="<?=$book['file']?>" 
 						name="current_file">
 
-					<a href="uploads/files/<?=$book['file']?>"
+					<a href="upload/files/<?=$book['file']?>"
 					class="link-dark">Current File</a>
 				</div>
 

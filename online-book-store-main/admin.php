@@ -156,10 +156,10 @@ if (isset($_SESSION['user_id']) &&
 					<td><?=$i?></td>
 					<td>
 						<img width="100"
-							src="uploads/cover/<?=$book['cover']?>" >
+							src="upload/cover/<?=$book['cover']?>" >
 						<a  class="link-dark d-block
 								text-center"
-							href="uploads/files/<?=$book['file']?>">
+							href="upload/files/<?=$book['file']?>">
 						<?=$book['title']?>	
 						</a>
 							
