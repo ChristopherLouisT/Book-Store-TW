@@ -42,58 +42,7 @@ include "css/style-bookstore.php";
 
 	<div class="container">
 		<div class = "row">
-			
-			<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand text-light fw-bolder" href="index.php">Online Book Store</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></spa>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder active"
-						aria-current="page"
-						href="index.php">Store</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						href="#">Contact</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						href="#">About</a>
-					</li>
-
-					<li class="nav-item">
-					<?php if (isset($_SESSION['user_id'])) {?>
-						<a class="nav-link text-light rounded fw-bolder"
-						href="logoutCustomer.php">Logout</a>
-					<?php } else {?>
-					<a class="nav-link text-light rounded fw-bolder"
-						href="signup.php">SignUp</a>
-					<?php }?>
-					</li>
-
-					<li class="nav-item">
-					<?php if (isset($_SESSION['user_id'])) {?>
-						<a class="nav-link text-light rounded fw-bolder"
-						href="#">Profile</a>
-					<?php } else {?>
-					<a class="nav-link text-light rounded fw-bolder"
-						href="loginCustomer.php">Login</a>
-					<?php }?>
-					</li>
-
-					<div class="d-flex">
-					    <!-- Tombol Dark Mode -->
-    					<button id="darkModeToggle" class="btn btn-outline-light ms-2">Dark Mode</button>
-					</div>
-
-				</ul>
-				</div>
-			</div>
-			</nav>
+			<?php include("menunavbar.php"); ?>
 		</div>
 
 		<div class = "row g-0 mt-5">
@@ -134,7 +83,7 @@ include "css/style-bookstore.php";
 				<div class="pdf-list d-flex flex-wrap">
 					<?php foreach ($books as $book) {?>
 						<div class="card m-1 book-card" data-id="<?=$book['id']?>">
-						<img src="upload/cover/<?=$book['cover']?>"
+						<img src="uploads/cover/<?=$book['cover']?>"
 							class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title">
@@ -143,35 +92,35 @@ include "css/style-bookstore.php";
 							<p class="card-text">
 								<b>By:
 									<?php foreach ($authors as $author) {
-										if ($author['id'] == $book['author_id']) {
-										echo $author['name'];
-										break;
-									}
+    if ($author['id'] == $book['author_id']) {
+        echo $author['name'];
+        break;
+    }
 
-								}?>
+}?>
 								<br></b>
 
 								<b>Category:
 									<?php foreach ($categories as $category) {
-									if ($category['id'] == $book['category_id']) {
-										echo $category['name'];
-										break;
-									}
-								}?>
+    if ($category['id'] == $book['category_id']) {
+        echo $category['name'];
+        break;
+    }
+}?>
 								<br></b>
 
 								<b>Type:
 									<?php foreach ($types as $type) {
-									if ($type['id'] == $book['type_id']) {
-										echo $type['name'];
-										break;
-									}
-								}?>
+    if ($type['id'] == $book['type_id']) {
+        echo $type['name'];
+        break;
+    }
+}?>
 								<br></b>
-								<?= substr($book['description'], 0, 100) . "..."; ?>
+								<?=substr($book['description'], 0, 100) . "...";?>
 							</p>
 							<a href="detail.php?id=<?=$book['id']?>"
-							class="btn btn-success">Buy</a>
+							class="btn btn-success">Detail Book</a>
 						</div>
 					</div>
 
@@ -193,8 +142,8 @@ include "css/style-bookstore.php";
 						<!-- List of types -->
 						<div class="list-group">
 							<?php if ($types == 0) {
-								// do nothing
-							} else {?>
+    // do nothing
+} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Type</a>
 							<?php foreach ($types as $type) {?>
@@ -208,8 +157,8 @@ include "css/style-bookstore.php";
 						<!-- List of categories -->
 						<div class="list-group mt-5">
 							<?php if ($categories == 0) {
-								// do nothing
-							} else {?>
+    // do nothing
+} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Category</a>
 							<?php foreach ($categories as $category) {?>
@@ -223,8 +172,8 @@ include "css/style-bookstore.php";
 						<!-- List of authors -->
 						<div class="list-group mt-5">
 							<?php if ($authors == 0) {
-								// do nothing
-							} else {?>
+    // do nothing
+} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Author</a>
 							<?php foreach ($authors as $author) {?>

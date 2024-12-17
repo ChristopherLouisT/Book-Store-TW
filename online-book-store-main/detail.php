@@ -9,6 +9,7 @@ include "db_conn.php";
 # Book helper function
 include "php/func-book.php";
 $books = get_all_books($conn);
+$mybooks = get_my_books($conn);
 
 # author helper function
 include "php/func-author.php";
@@ -24,14 +25,13 @@ $categories = get_all_categories($conn);
 $id = $_GET['id'];
 
 foreach ($books as $book) {
-  if ($book['id'] == $id) {
-    $harga = $book['price']; 
-    $judul = $book['title']; 
-  }
+    if ($book['id'] == $id) {
+        $harga = $book['price'];
+        $judul = $book['title'];
+    }
 }
 
 //=========================================================================
-
 
 require_once dirname(__FILE__) . '/midtrans/Midtrans.php';
 Config::$serverKey = 'SB-Mid-server-rDms8-4RDf9MKQJJT2HgEveB';
@@ -45,12 +45,11 @@ $transaction_details = array(
 
 // Optional
 $item1_details = array(
-  'id' => $id,
-  'price' => $harga,
-  'quantity' => 1,
-  'name' => $judul,
+    'id' => $id,
+    'price' => $harga,
+    'quantity' => 1,
+    'name' => $judul,
 );
-
 
 // Optional
 $item_details = array($item1_details);
@@ -112,52 +111,7 @@ function printExampleWarningMessage()
 
  <div class="container">
     <div class = "row">
-			<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand text-light fw-bolder" href="index.php">Online Book Store</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse"
-					id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder active"
-						aria-current="page"
-						href="index.php">Store</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						href="#">Contact</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						href="#">About</a>
-					</li>
-
-					<li class="nav-item">
-					<?php if (isset($_SESSION['user_id'])) {?>
-						<a class="nav-link text-light rounded fw-bolder"
-						href="logoutCustomer.php">Logout</a>
-					<?php } else {?>
-					<a class="nav-link text-light rounded fw-bolder"
-						href="signup.php">SignUp</a>
-					<?php }?>
-					</li>
-
-					<li class="nav-item">
-					<?php if (isset($_SESSION['user_id'])) {?>
-						<a class="nav-link text-light rounded fw-bolder"
-						href="#">Profile</a>
-					<?php } else {?>
-					<a class="nav-link text-light rounded fw-bolder"
-						href="loginCustomer.php">Login</a>
-					<?php }?>
-					</li>
-				</ul>
-				</div>
-			</div>
-			</nav>
+            <?php include("menunavbar.php"); ?>
 		</div>
 
   <!-- <form action="search.php"
@@ -200,9 +154,35 @@ function printExampleWarningMessage()
         ?>
                     <div class="row">
                         <div class="col-md-3">
-                                <img src="upload/cover/<?=$book['cover']?>" class="card-img-top">
+                                <img src="uploads/cover/<?=$book['cover']?>" class="card-img-top">
                                 <div class="card-body">
-                                    <button type='button' class='btn btn-success' onclick="bayar()">Buy</button>
+                                <?php
+if (isset($_SESSION['user_id'])) {
+
+                            $flag = 0; 
+                            foreach($mybooks as $mbook) {
+                                if($mbook['id'] == $book['id']) 
+                                { $flag = 1; }
+                            }
+
+                            if($flag == 0) 
+                            {
+            ?>
+
+                                    <button type='button' class='form-control btn btn-success' onclick="bayar()">Buy Book</button>
+                        <?php 
+                            } else {
+                        ?>
+                                    <button type='button' class='form-control btn btn-success'>View Book</button>
+                        <?php 
+                            }
+
+} else {
+        ?>
+                                    <a href='loginCustomer.php'><button type='button' class='form-control btn btn-success'>Login First To Buy Book</button></a>
+<?php 
+}
+?>
                                 </div> <!-- tutup div punyae card body -->
                         </div>
                         <div class="col-md-9">
@@ -227,7 +207,7 @@ function printExampleWarningMessage()
         }?>
         <br>
         <h4>Price:
-        <?= "Rp. " . substr($book['price'], 0)?>
+        <?="Rp. " . substr($book['price'], 0)?>
         </b></i></h4>
        <p><?=($book['description'])?>
                         </div>
@@ -247,31 +227,30 @@ function printExampleWarningMessage()
 </html>
 
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?php echo Config::$clientKey;?>"></script>
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?php echo Config::$clientKey; ?>"></script>
 <script language="javascript">
 function bayar() {
   snap.pay('<?php echo $snap_token ?>', {
       // Optional
       onSuccess: function(result){
           /* You may add your own js here, this is just example */
-          alert("sukses"); 
-          $.post("simpantrans.php",
+          alert("sukses");
+          $.post("simpantrans.php",             // ajax
             { idbook: <?php echo $id; ?> },
             function(result) {
-              alert(result); 
               window.location.href = "listtransaksi.php";
             }
-          ); 
+          );
       },
       // Optional
       onPending: function(result){
-          /* You may add your own js here, this is just example */ 
-          alert("pending"); 
+          /* You may add your own js here, this is just example */
+          alert("pending");
       },
       // Optional
       onError: function(result){
-          /* You may add your own js here, this is just example */ 
-          alert("error"); 
+          /* You may add your own js here, this is just example */
+          alert("error");
       }
   });
 }
