@@ -240,7 +240,7 @@ if (isset($_SESSION['user_id']) &&
 
 				<div class="mb-3">
 					<label class="form-label">
-						File PDF (Below 50 MB)
+						File PDF (Below 40 MB)
 						</label>
 					<input type="file" 
 						class="form-control" 
