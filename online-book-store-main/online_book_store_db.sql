@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2024 at 09:49 AM
+-- Generation Time: Dec 17, 2024 at 10:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -92,8 +92,9 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author_id`, `description`, `category_id`, `price`, `type_id`, `cover`, `file`) VALUES
-(1, 'Pride and Prejudice', 1, 'Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?', 8, 35000, 4, 'prideandprejustice.jpeg', 'Soal Tree.pdf'),
-(2, '1984', 2, 'In 1984, civilisation has been ravaged by world war, civil conflict, and revolution. Airstrip One (formerly known as Great Britain) is a province of Oceania, one of the three totalitarian super-states that rule the world. It is ruled by \"The Party\" under the ideology of \"Ingsoc\" (a Newspeak shortening of \"English Socialism\") and the mysterious leader Big Brother, who has an intense cult of personality. The Party brutally purges out anyone who does not fully conform to their regime, using the Thought Police and constant surveillance through telescreens (two-way televisions), cameras, and hidden microphones. Those who fall out of favour with the Party become \"unpersons\", disappearing with all evidence of their existence destroyed.\r\nIn London, Winston Smith is a member of the Outer Party, working at the Ministry of Truth, where he rewrites historical records to conform to the state\'s ever-changing version of history. Winston revises past editions of The Times, while the original documents are destroyed after being dropped into ducts known as memory holes, which lead to an immense furnace. He secretly opposes the Party\'s rule and dreams of rebellion, despite knowing that he is already a \"thought-criminal\" and is likely to be caught one day.\r\n“Doublethink means the power of holding two contradictory beliefs in one\'s mind simultaneously, and accepting both of them.”', 8, 20000, 4, '1984.jpg', 'DDL.pdf'),
+(1, 'Pride and Prejudice', 1, 'Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?', 8, 35000, 4, 'prideandprejustice.jpeg', 'PrideAndPrejudice.pdf'),
+(2, '1984', 2, 'In 1984, civilisation has been ravaged by world war, civil conflict, and revolution. Airstrip One (formerly known as Great Britain) is a province of Oceania, one of the three totalitarian super-states that rule the world. It is ruled by \"The Party\" under the ideology of \"Ingsoc\" (a Newspeak shortening of \"English Socialism\") and the mysterious leader Big Brother, who has an intense cult of personality. The Party brutally purges out anyone who does not fully conform to their regime, using the Thought Police and constant surveillance through telescreens (two-way televisions), cameras, and hidden microphones. Those who fall out of favour with the Party become \"unpersons\", disappearing with all evidence of their existence destroyed.\r\nIn London, Winston Smith is a member of the Outer Party, working at the Ministry of Truth, where he rewrites historical records to conform to the state\'s ever-changing version of history. Winston revises past editions of The Times, while the original documents are destroyed after being dropped into ducts known as memory holes, which lead to an immense furnace. He secretly opposes the Party\'s rule and dreams of rebellion, despite knowing that he is already a \"thought-criminal\" and is likely to be caught one day.\r\n“Doublethink means the power of holding two contradictory beliefs in one\'s mind simultaneously, and accepting both of them.”', 8, 20000, 4, '1984.jpg', '1984.pdf'),
+(3, 'The Murder of Roger Ackroyd', 3, '\"The Murder of Roger Ackroyd” tells the story of the murder of Roger Ackroyd, a wealthy man in a small community. Detective Hercule Poirot is called in to solve the case, which becomes complicated as secrets and deceptions within Ackroyd’s circle are revealed. As Poirot investigates, he uncovers surprising twists and exposes the true murderer.', 3, 50000, 5, 'the-murder-of-roger-ackroyd.jpg', 'The-Murder-of-Roger-Ackroyd-Agatha-Christie.pdf'),
 (4, 'The Journey Of Elaina Volume 3', 7, 'Since childhood, Elaina has always been fascinated by the stories written within her favorite book, especially those about Nike, a renowned witch who had numerous great travels across the world. Wanting to experience the awe of adventure herself, Elaina strives to become a witch, and despite the numerous trials that come her way, she eventually succeeds.  Now a full-fledged witch, Elaina finally embarks on her long-awaited journey, in which she meets many people along the way, learning their various stories. Through all of this, she explores the world at its fullest—experiencing both its bright and dark sides—starting her legendary tale', 3, 30000, 1, '675005007d2f50.28007394.png', '675005007d8195.35786717.pdf'),
 (5, 'Takou Koori No Hime Volume 1', 8, ' Seorang gadis cantik dari sekolah lain berada di kereta yang dinaiki Minori Souta, seorang siswa SMA biasa. [Ratu Es] Shinonome Nagi, yang memiliki sikap dingin dan menjauhkan orang lain. Itulah namanya. Suatu hari, Souta menyaksikan dia dianiaya dan mengerahkan keberanian untuk membantunya. Keesokan harinya, dia muncul di hadapannya lagi... “Aku ingin kamu tetap di sisiku saat aku di kereta.', 7, 40000, 1, '675ac9259c66d4.53237542.jpg', '675ac9259ca083.77630437.pdf'),
 (6, 'Danjo Yuujou Wa Seiritsu Volume 1', 9, 'Novel komedi romantis berfokus pada hubungan antara Himari Inuzuka dan penyuka bunga Yuu Natsume, yang bersumpah untuk menjadi teman selamanya selama sekolah menengah. Mereka menghabiskan waktu bersama dengan bahagia bahkan sampai SMA. Namun ketika cinta pertama Yuu muncul kembali dalam hidupnya, hubungan mereka berangsur-angsur menjadi lebih kacau, dan hubungan Himari dan Yuu perlahan berubah menjadi sesuatu yang lebih.', 7, 45000, 1, '675acc424a9d13.43582130.jpg', '675acc424adc84.37124862.pdf'),
@@ -111,8 +112,7 @@ INSERT INTO `books` (`id`, `title`, `author_id`, `description`, `category_id`, `
 (18, 'Magic Academy’s Genius Blinker Chapter 11 - 20', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de4333b06f9.60935896.jpeg', '675de4333b2cb3.33337414.pdf'),
 (19, 'Magic Academy’s Genius Blinker Chapter 21 - 30', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de45761c699.20630705.jpeg', '675de457620054.48256838.pdf'),
 (20, 'Magic Academy’s Genius Blinker Chapter 31 - 40', 14, 'Karakter dengan tingkat kesulitan ekstrim dan performa terburuk, Baek Yu-Seol dianggap sebagai tr*sh di dalam game karena dia tidak bisa menggunakan sihir di dunia fantasi yang semua orang bisa. Namun…[Karena akhir yang salah, 90% Dunia Aether telah hancur.] [Tolong raih ‘Akhir yang sebenarnya.’] Tiba-tiba, kata-kata itu terngiang di benakku sebelum aku dipindahkan ke Dunia Aether.[Kamu bisa menggunakan skill ‘Blink’.] “Kenapa aku bisa menjadi karakter ini?” Blink adalah satu-satunya kemampuan sihir yang diberikan padaku. Bertahan hidup di Akademi Stella di mana ada banyak penyihir jenius merajalela, aku menjadi Penyihir Blink yang terkenal', 3, 40000, 3, '675de478b59489.44760742.jpeg', '675de478b5d426.66854025.pdf'),
-(21, 'ELEPHANT CAN REMEMBER ', 3, 'Hercule Poirot berdiri di pinggir tebing, memandang bebatuan di bawah sana dan air laut yang memecah di antaranya. Di tempat dia berdiri, pernah ditemukan mayat sepasang suami-istri. Di sini, tiga minggu sebelumnya, seorang wanita berjalan dalam tidurnya, jatuh, dan tewas. Mengapa semua ini bisa terjadi? Hercule Poirot bersama sahabatnya, Mrs. Ariadne Oliver, penulis novel detektif kondang, harus melangkah mundur, menelusuri tragedi yang terjadi belasan tahun lalu demi kebahagiaan seorang gadis yang tidak bersalah.', 3, 56999, 5, 'elephant\'s can remember.jpg', 'gajah selalu ingat.pdf'),
-(22, 'The Murder of Roger Ackroyd', 3, '\"The Murder of Roger Ackroyd” tells the story of the murder of Roger Ackroyd, a wealthy man in a small community. Detective Hercule Poirot is called in to solve the case, which becomes complicated as secrets and deceptions within Ackroyd’s circle are revealed. As Poirot investigates, he uncovers surprising twists and exposes the true murderer.', 3, 50000, 5, 'the-murder-of-roger-ackroyd.jpg', 'The-Murder-of-Roger-Ackroyd-Agatha-Christie.pdf');
+(21, 'ELEPHANT CAN REMEMBER ', 3, 'Hercule Poirot berdiri di pinggir tebing, memandang bebatuan di bawah sana dan air laut yang memecah di antaranya. Di tempat dia berdiri, pernah ditemukan mayat sepasang suami-istri. Di sini, tiga minggu sebelumnya, seorang wanita berjalan dalam tidurnya, jatuh, dan tewas. Mengapa semua ini bisa terjadi? Hercule Poirot bersama sahabatnya, Mrs. Ariadne Oliver, penulis novel detektif kondang, harus melangkah mundur, menelusuri tragedi yang terjadi belasan tahun lalu demi kebahagiaan seorang gadis yang tidak bersalah.', 3, 56999, 5, 'elephant\'s can remember.jpg', 'gajah selalu ingat.pdf');
 
 -- --------------------------------------------------------
 
@@ -132,7 +132,7 @@ CREATE TABLE `buybook` (
 --
 
 INSERT INTO `buybook` (`id`, `tanggal`, `user_id`, `book_id`) VALUES
-(1, '2024-12-15', 99, 18);
+(1, '2024-12-15', 2, 18);
 
 -- --------------------------------------------------------
 
@@ -197,7 +197,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `password`, `full_name`) VALUES
 (1, 'bdstwn@gmail.com', '$2y$10$DNatemfUfLz9KjhTweX6deFYrWQrcb8qA.OMMDo35GLDTmATYgomO', 'Budi Setiawan'),
-(2, 'JoshKeren@gmail.com', '$2y$10$kfGa6uXtoto9rqzoUacZhe1./do82s9lg83w28/dm0sB.M93FFea2', 'Joshua Chandra');
+(2, 'JoshKeren@gmail.com', '$2y$10$kfGa6uXtoto9rqzoUacZhe1./do82s9lg83w28/dm0sB.M93FFea2', 'Joshua Chandra'),
+(3, 'rymn@gmai.com', '$2y$10$lu8jUQ18XfX4ipWcbJwETOuU/QsE7yfmTaQ7eV1/6y8o1u7M/Cxzy', 'Raymond Chin');
 
 --
 -- Indexes for dumped tables
@@ -289,7 +290,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

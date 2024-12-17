@@ -17,47 +17,17 @@
       $stmt->execute([$em]);
 
       if($stmt->rowCount() > 0){
-        echo "<br><!-- Mau e kyk notif klo regist e berhasil, bantuin biar ketengah dong -->
-          <div class='align-items-center'>
-            <div class='row'>
-              <div class='col-md-6'>
-                <div class='card'>
-                  <div class='card-header'>
-                      Email is already Registered
-                  </div>
-                  <div class='card-body'>
-                      <blockquote class='blockquote mb-0'>
-                          <p>$fn is a family</p>
-                          <footer class='blockquote-footer'>Email Address : $em</footer>
-                      </blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>";
+        echo "<script>
+                alert('Email Address has used before.')
+              </script>";
       }
       if($stmt->rowCount() == 0){
         $stmt = $conn->prepare("insert into users values (0, ?, ?, ?)");
         $stmt->execute([$em, $pas, $fn]);
 
-        echo "<br><!-- Mau e kyk notif klo regist e berhasil, bantuin biar ketengah dong -->
-          <div class='align-items-center'>
-            <div class='row'>
-              <div class='col-md-6'>
-                <div class='card'>
-                  <div class='card-header'>
-                    Register Success!!
-                  </div>
-                  <div class='card-body'>
-                    <blockquote class='blockquote mb-0'>
-                        <p>$fn has registered to the family</p>
-                        <footer class='blockquote-footer'>Email Address : $em</footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>";
+        echo "<script>
+                alert('Customer has been registered!')
+              </script>";
       }
     }
     ?>

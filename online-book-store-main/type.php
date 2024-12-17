@@ -128,7 +128,7 @@ include "css/style-bookstore.php";
 				<div class="pdf-list d-flex flex-wrap">
 					<?php foreach ($books as $book) {?>
 					<div class="card m-1 book-card" data-id="<?=$book['id']?>">
-						<img src="upload/cover/<?=$book['cover']?>"
+						<img src="uploads/cover/<?=$book['cover']?>"
 							class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title">
