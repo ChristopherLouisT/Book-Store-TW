@@ -1,4 +1,8 @@
 <?php 
+echo 
+    "<script>
+        alert('Logout from Session.')
+    </script>";
 
 session_start();
 
@@ -7,3 +11,4 @@ session_destroy();
 
 header("Location: login.php");
 exit;
+?>
