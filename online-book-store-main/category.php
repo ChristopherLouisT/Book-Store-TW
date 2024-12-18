@@ -13,6 +13,9 @@ $id = $_GET['id'];
 # Database Connection File
 include "db_conn.php";
 
+# JS Helper
+include "js.php";
+
 # Book helper function
 include "php/func-book.php";
 $books = get_books_by_category($conn, $id);
@@ -236,8 +239,7 @@ include "css/style-bookstore.php";
 	</div>
 
 	<!-- script js popup -->
-	<script src="popup.js"></script>
-	<script src="darkmode.js"></script>
+	
 	
 </body>
 </html>
