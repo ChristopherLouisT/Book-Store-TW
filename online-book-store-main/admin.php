@@ -8,6 +8,9 @@ if (isset($_SESSION['user_id']) &&
     # Database Connection File
     include "db_conn.php";
 
+	# JS Helper
+	include "js.php";
+
     # Book helper function
     include "php/func-book.php";
     $books = get_all_books($conn);
@@ -121,7 +124,7 @@ $i = 0;
 					<td>
 						<img width="100"
 							src="uploads/cover/<?=$book['cover']?>" >
-						<a  class="link-dark d-block
+						<a  class="link-dark alink d-block
 								text-center"
 							href="uploads/files/<?=$book['file']?>">
 						<?=$book['title']?>
