@@ -12,6 +12,8 @@ $id = $_GET['id'];
 
 # Database Connection File
 include "db_conn.php";
+$cnt = new Connection();
+$conn = $cnt->getConn();
 
 # Book helper function
 include "php/func-book.php";

@@ -7,6 +7,8 @@
     
     <?php
     include("db_conn.php");
+    $cnt = new Connection();
+    $conn = $cnt->getConn();
 
     if (isset($_POST['btnregister'])){
       $fn = $_POST['txtfullname'];

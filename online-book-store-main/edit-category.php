@@ -16,6 +16,8 @@ if (isset($_SESSION['user_id']) &&
 
 	# Database Connection File
 	include "db_conn.php";
+	$cnt = new Connection();
+	$conn = $cnt->getConn();
 
 	# CSS Helper
 	include "css/style-bookstore.php";

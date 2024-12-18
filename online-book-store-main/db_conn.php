@@ -1,19 +1,24 @@
 <?php 
-# server name
-$sName = "localhost";
-# user name
-$uName = "root";
-# password
-$pass = "";
+class Connection{
 
-# database name
-$db_name = "online_book_store_db";
+  public $sName = "localhost";
+  public $uName = "root";
+  public $pass = "";
+  public $db_name = "online_book_store_db";
+  public $conn;
 
-try {
-    $conn = new PDO("mysql:host=$sName;dbname=$db_name", 
-                    $uName, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}catch(PDOException $e){
-  echo "Connection failed : ". $e->getMessage();
+  public function __construct(){
+    try {
+      $this->conn = new PDO("mysql:host=$this->sName;dbname=$this->db_name", 
+                      $this->uName, $this->pass);
+      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }catch(PDOException $e){
+      echo "Connection failed : ". $e->getMessage();
+    }
+  }
+
+  public function getConn(){
+    return $this->conn;
+  }
 }
 ?>
