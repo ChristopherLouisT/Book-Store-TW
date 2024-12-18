@@ -4,7 +4,7 @@ if (isset($_SESSION['jenis_user'])) { // sudah login
 
     if ($_SESSION['jenis_user'] == "admin") { // admin
         ?>
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light fw-bolder" href="admin.php">Admin</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@ if (isset($_SESSION['jenis_user'])) { // sudah login
 <?php
 } else { // user
 ?>
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light fw-bolder" href="index.php">Online Book Store</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
