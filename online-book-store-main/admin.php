@@ -127,83 +127,74 @@ if (isset($_SESSION['user_id']) &&
 				There is no book in the database
 			</div>
 			<?php } else {?>
-
-
-			<!-- List of all books -->
-			<h4>All Books</h4>
-			<table class="table table-bordered shadow">
-				<thead>
+				<!-- List of all books -->
+				<h4>All Books</h4>
+				<table class="table table-bordered shadow">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Title</th>
+							<th>Author</th>
+							<th>Description</th>
+							<th>Category</th>
+							<th>Type</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php
+				$i = 0;
+        		foreach ($books as $book) {
+            		$i++;?>
 					<tr>
-						<th>No</th>
-						<th>Title</th>
-						<th>Author</th>
-						<th>Description</th>
-						<th>Category</th>
-						<th>Type</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php
-$i = 0;
-        foreach ($books as $book) {
-            $i++;
-            ?>
-				<tr>
-					<td><?=$i?></td>
-					<td>
-						<img width="100"
-							src="uploads/cover/<?=$book['cover']?>" >
-						<a  class="link-dark alink d-block
-								text-center"
-							href="uploads/files/<?=$book['file']?>">
-						<?=$book['title']?>
-						</a>
+						<td><?=$i?></td>
+						<td>
+							<img width="100"
+								src="uploads/cover/<?=$book['cover']?>" >
+							<a  class="link-dark alink d-block
+									text-center"
+								href="uploads/files/<?=$book['file']?>">
+							<?=$book['title']?>
+							</a>
 
+						</td>
+						<td>
+							<?php if ($authors == 0) {
+					echo "Undefined";
+				} else {
+					foreach ($authors as $author) {
+						if ($author['id'] == $book['author_id']) {
+							echo $author['name'];
+						}
+					}
+				}?>
+
+				</td>
+				<td><?=$book['description']?></td>
+				<td>
+					<?php if ($categories == 0) {
+					echo "Undefined";
+				} else {
+					foreach ($categories as $category) {
+						if ($category['id'] == $book['category_id']) {
+							echo $category['name'];
+						}
+					}
+				}
+				?>
 					</td>
-
-					<td>
-						<?php if ($authors == 0) {
-                echo "Undefined";
-            } else {
-                foreach ($authors as $author) {
-                    if ($author['id'] == $book['author_id']) {
-                        echo $author['name'];
-                    }
-                }
-            }
-            ?>
-
-					</td>
-
-					<td><?=$book['description']?></td>
-
-					<td>
-						<?php if ($categories == 0) {
-                echo "Undefined";
-            } else {
-                foreach ($categories as $category) {
-                    if ($category['id'] == $book['category_id']) {
-                        echo $category['name'];
-                    }
-                }
-            }
-            ?>
-					</td>
-
 					<td>
 						<?php if ($types == 0) {
-                echo "Undefined";
-            } else {
-                foreach ($types as $type) {
-                    if ($type['id'] == $book['type_id']) {
-                        echo $type['name'];
-                    }
-                }
-            }
-            ?>
+							echo "Undefined";
+						} else {
+							foreach ($types as $type) {
+								if ($type['id'] == $book['type_id']) {
+									echo $type['name'];
+								}
+							}
+						}
+						?>
 					</td>
-
 					<td>
 						<a href="edit-book.php?id=<?=$book['id']?>"
 						class="btn btn-warning">
@@ -216,7 +207,7 @@ $i = 0;
 
 				</tr>
 				<?php
-}?>
+				}?>
 				</tbody>
 			</table>
 		<?php }?>
@@ -244,10 +235,9 @@ $i = 0;
 				</thead>
 				<tbody>
 					<?php
-$j = 0;
-        foreach ($types as $type) {
-            $j++;
-            ?>
+				$j = 0;
+				foreach ($types as $type) {
+					$j++;?>
 					<tr>
 						<td><?=$j?></td>
 						<td><?=$type['name']?></td>
@@ -262,7 +252,7 @@ $j = 0;
 						</td>
 					</tr>
 					<?php
-}?>
+				}?>
 				</tbody>
 			</table>
 			<?php }?>
@@ -291,10 +281,10 @@ $j = 0;
 				</thead>
 				<tbody>
 					<?php
-$j = 0;
-        foreach ($categories as $category) {
-            $j++;
-            ?>
+				$j = 0;
+				foreach ($categories as $category) {
+					$j++;
+					?>
 					<tr>
 						<td><?=$j?></td>
 						<td><?=$category['name']?></td>
@@ -309,7 +299,7 @@ $j = 0;
 						</td>
 					</tr>
 					<?php
-}?>
+				}?>
 				</tbody>
 			</table>
 			<?php }?>
@@ -337,10 +327,10 @@ $j = 0;
 				</thead>
 				<tbody>
 					<?php
-$k = 0;
-        foreach ($authors as $author) {
-            $k++;
-            ?>
+					$k = 0;
+					foreach ($authors as $author) {
+						$k++;
+						?>
 					<tr>
 						<td><?=$k?></td>
 						<td><?=$author['name']?></td>
@@ -355,7 +345,7 @@ $k = 0;
 						</td>
 					</tr>
 					<?php
-}?>
+					}?>
 				</tbody>
 			</table>
 			<?php }?>
