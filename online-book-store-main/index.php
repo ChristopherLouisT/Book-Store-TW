@@ -44,7 +44,7 @@ include "css/style-bookstore.php";
 
 	<div class="container">
 		<div class = "row">
-			<?php include("menunavbar.php"); ?>
+			<?php include("menunavbarCust.php"); ?>
 		</div>
 		<div class = "row g-0 mt-5">
 			<form action="search.php"

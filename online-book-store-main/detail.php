@@ -1,4 +1,4 @@
-<?php
+<?php include("menunavbarCust.php"); ?><?php include("menunavbarCust.php"); ?><?php include("menunavbarCust.php"); ?><?php
 namespace Midtrans;
 
 session_start();
