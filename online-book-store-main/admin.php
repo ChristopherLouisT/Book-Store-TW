@@ -10,9 +10,6 @@ if (isset($_SESSION['user_id']) &&
 	$cnt = new Connection();
 	$conn = $cnt->getConn();
 
-	# JS Helper
-	include "js.php";
-
     # Book helper function
     include "php/func-book.php";
     $books = get_all_books($conn);
@@ -59,11 +56,6 @@ if (isset($_SESSION['user_id']) &&
 				<div class="collapse navbar-collapse"
 					id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						aria-current="page"
-						href="index.php">Store</a>
-					</li>
 					<li class="nav-item">
 					<a class="nav-link text-light rounded fw-bolder"
 						href="add-book.php">Add Book</a>
