@@ -100,7 +100,6 @@ include "css/style-bookstore.php";
 						href="loginCustomer.php">Login</a>
 					<?php }?>
 					</li>
-
 				</ul>
 				</div>
 			</div>

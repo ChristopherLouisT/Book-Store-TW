@@ -46,7 +46,6 @@ include "css/style-bookstore.php";
 		<div class = "row">
 			<?php include("menunavbar.php"); ?>
 		</div>
-
 		<div class = "row g-0 mt-5">
 			<form action="search.php"
 				method="get"
@@ -65,11 +64,9 @@ include "css/style-bookstore.php";
 							id="basic-addon2">
 							<img src="img/search.png"
 								width="20">
-
 					</button>
 				</div>
 		</form>
-
 			<div class="d-flex pt-3">
 				<?php if ($books == 0) {?>
 					<div class="alert alert-warning
@@ -81,7 +78,6 @@ include "css/style-bookstore.php";
 					There is no book in the database
 				</div>
 				<?php } else {?>
-
 				<div class="pdf-list d-flex flex-wrap">
 					<?php foreach ($books as $book) {?>
 						<div class="card m-1 book-card" data-id="<?=$book['id']?>">
@@ -93,31 +89,31 @@ include "css/style-bookstore.php";
 							</h5>
 							<p class="card-text">
 								<b>By:
-									<?php foreach ($authors as $author) {
-    if ($author['id'] == $book['author_id']) {
-        echo $author['name'];
-        break;
-    }
+								<?php foreach ($authors as $author) {
+									if ($author['id'] == $book['author_id']) {
+										echo $author['name'];
+										break;
+									}
 
-}?>
+								}?>
 								<br></b>
 
 								<b>Category:
-									<?php foreach ($categories as $category) {
-    if ($category['id'] == $book['category_id']) {
-        echo $category['name'];
-        break;
-    }
-}?>
+								<?php foreach ($categories as $category) {
+									if ($category['id'] == $book['category_id']) {
+										echo $category['name'];
+										break;
+									}
+								}?>
 								<br></b>
 
 								<b>Type:
-									<?php foreach ($types as $type) {
-    if ($type['id'] == $book['type_id']) {
-        echo $type['name'];
-        break;
-    }
-}?>
+								<?php foreach ($types as $type) {
+									if ($type['id'] == $book['type_id']) {
+										echo $type['name'];
+										break;
+									}
+								}?>
 								<br></b>
 								<?=substr($book['description'], 0, 100) . "...";?>
 							</p>
@@ -144,8 +140,8 @@ include "css/style-bookstore.php";
 						<!-- List of types -->
 						<div class="list-group">
 							<?php if ($types == 0) {
-    // do nothing
-} else {?>
+    							// do nothing
+							} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Type</a>
 							<?php foreach ($types as $type) {?>
@@ -159,8 +155,8 @@ include "css/style-bookstore.php";
 						<!-- List of categories -->
 						<div class="list-group mt-5">
 							<?php if ($categories == 0) {
-    // do nothing
-} else {?>
+								// do nothing
+							} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Category</a>
 							<?php foreach ($categories as $category) {?>
@@ -174,8 +170,8 @@ include "css/style-bookstore.php";
 						<!-- List of authors -->
 						<div class="list-group mt-5">
 							<?php if ($authors == 0) {
-    // do nothing
-} else {?>
+								// do nothing
+							} else {?>
 							<a href="#"
 							class="list-group-item list-group-item-action active">Author</a>
 							<?php foreach ($authors as $author) {?>
@@ -192,7 +188,6 @@ include "css/style-bookstore.php";
 			</div>
 		</div> <!-- Row Div -->
 	</div> <!-- Container Div-->
-
 	<!-- script js -->
 	<script src="popup.js"></script>
 	<script src="darkmode.js"></script>

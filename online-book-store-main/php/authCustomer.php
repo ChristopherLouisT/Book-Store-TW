@@ -6,6 +6,8 @@ if (isset($_POST['email']) &&
     
     # Database Connection File
 	include "../db_conn.php";
+	$cnt = new Connection();
+	$conn = $cnt->getConn();
     
     # Validation helper function
 	include "func-validation.php";
