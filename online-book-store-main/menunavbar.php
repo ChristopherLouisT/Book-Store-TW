@@ -12,14 +12,6 @@
 			aria-current="page"
 			href="index.php">Store</a>
 		</li>
-		<li class="nav-item">
-		<a class="nav-link text-light rounded fw-bolder"
-			href="#">Contact</a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link text-light rounded fw-bolder"
-			href="#">About</a>
-		</li>
 
 		<li class="nav-item">
 		<?php if (isset($_SESSION['user_id'])) {?>
