@@ -64,83 +64,87 @@ include "css/style-bookstore.php";
                     <h5 class = "text-center text-light"><?=$user['email']?></h5>
                 </div>
             </section>
-            <div class="row px-0">
-            <div class="d-flex pt-3 text-center">
-				<?php if ($books == 0) {?>
-					<div class="alert alert-warning
-							text-center p-5"
-					role="alert">
-					<img src="img/empty.png"
-						width="100">
-					<br>
-					There is no book in the database
-				</div>
-				<?php } else {?>
+            
+            <div class="row">
+                <div class="d-flex pt-3 justify-content-center">
+                    <?php if ($books == 0) {?>
+                        <div class="alert alert-warning
+                                text-center p-5"
+                        role="alert">
+                        <img src="img/empty.png"
+                            width="100">
+                        <br>
+                        There is no book in the database
+                    </div>
+                    <?php } else {?>
 
-				<div class="pdf-list d-flex flex-wrap text-center">
-					<?php foreach ($books as $book) {?>
-						<div class="card m-1 book-card" data-id="<?=$book['id']?>">
-						<img src="uploads/cover/<?=$book['cover']?>"
-							class="card-img-top">
-						<div class="card-body">
-							<h5 class="card-title">
-								<?=$book['title']?>
-							</h5>
-							<p class="card-text">
-								<b>By:
-									<?php foreach ($authors as $author) {
-    if ($author['id'] == $book['author_id']) {
-        echo $author['name'];
-        break;
-    }
+                    <div class="pdf-list d-flex flex-wrap">
+                        <?php foreach ($books as $book) {?>
+                            <div class="card m-1 book-card" data-id="<?=$book['id']?>">
+                            <img src="uploads/cover/<?=$book['cover']?>"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?=$book['title']?>
+                                </h5>
+                                <p class="card-text">
+                                    <b>By:
+                                        <?php foreach ($authors as $author) {
+        if ($author['id'] == $book['author_id']) {
+            echo $author['name'];
+            break;
+        }
 
-}?>
-								<br></b>
+    }?>
+                                    <br></b>
 
-								<b>Category:
-									<?php foreach ($categories as $category) {
-    if ($category['id'] == $book['category_id']) {
-        echo $category['name'];
-        break;
-    }
-}?>
-								<br></b>
+                                    <b>Category:
+                                        <?php foreach ($categories as $category) {
+        if ($category['id'] == $book['category_id']) {
+            echo $category['name'];
+            break;
+        }
+    }?>
+                                    <br></b>
 
-								<b>Type:
-									<?php foreach ($types as $type) {
-    if ($type['id'] == $book['type_id']) {
-        echo $type['name'];
-        break;
-    }
-}?>
-								<br></b>
-								<?=substr($book['description'], 0, 100) . "...";?>
-							</p>
-							<a href="uploads/files/<?=$book['file']?>"
-							class="btn btn-success">Open</a>
+                                    <b>Type:
+                                        <?php foreach ($types as $type) {
+        if ($type['id'] == $book['type_id']) {
+            echo $type['name'];
+            break;
+        }
+    }?>
+                                    <br></b>
+                                    <?=substr($book['description'], 0, 100) . "...";?>
+                                </p>
+                                <a href="uploads/files/<?=$book['file']?>"
+                                class="btn btn-success fw-bolder">Open</a>
 
-                            <a href="uploads/files/<?=$book['file']?>"
-							class="btn btn-success"download=<?=$book['title']?>>Download</a>
-						</div>
-					</div>
+                                <a href="uploads/files/<?=$book['file']?>"
+                                class="btn btn-primary fw-bolder"download=<?=$book['title']?>>Download</a>
+                            </div>
+                        </div>
 
-					<!-- Popup Element -->
-					<div class="book-popup" id="popup-<?=$book['id']?>">
-					    <div class="popup-content">
-					        <h4><?=$book['title']?></h4>
-					        <p><?=$book['description']?></p>
-					    </div>
-					</div>
+                        <!-- Popup Element -->
+                        <div class="book-popup" id="popup-<?=$book['id']?>">
+                            <div class="popup-content">
+                                <h4><?=$book['title']?></h4>
+                                <p><?=$book['description']?></p>
+                            </div>
+                        </div>
 
-					<?php }?>
-				</div>
-                </div>
+                        <?php }?>
+                        </div>
+                    </div>
                 </div>
 
 			<?php }?>
 
 </body>
 </html>
+
+<script src="popup.js"></script>
+<script src="darkmode.js"></script>
 
 <?php
 } else {
