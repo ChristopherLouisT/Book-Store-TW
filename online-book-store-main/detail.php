@@ -1,5 +1,7 @@
-<?php include("menunavbarCust.php"); ?><?php include("menunavbarCust.php"); ?><?php include("menunavbarCust.php"); ?><?php
+<?php
 namespace Midtrans;
+
+use Connection;
 
 session_start();
 
@@ -240,14 +242,14 @@ function bayar() {
           $.post("simpantrans.php",             // ajax
             { idbook: <?php echo $id; ?> },
             function(result) {
-              window.location.href = "listtransaksi.php";
+              window.location.href = "index.php";
             }
           );
       },
       // Optional
       onPending: function(result){
           /* You may add your own js here, this is just example */
-          alert("pending");
+          alert("pending or canceled");
       },
       // Optional
       onError: function(result){
