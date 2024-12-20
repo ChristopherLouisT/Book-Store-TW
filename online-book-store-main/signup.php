@@ -10,9 +10,24 @@
     $cnt = new Connection();
     $conn = $cnt->getConn();
 
+    include "php/func-validation.php";
+
     if (isset($_POST['btnregister'])){
       $fn = $_POST['txtfullname'];
       $em = $_POST['txtemail'];
+
+      $user_input = 'Fullname='.$fn.'email'.$em;
+
+      $text = "Fullname";
+      $location = "signup.php";
+      $ms = "error";
+		  is_empty($fn, $text, $location, $ms, $user_input);
+
+      $text = "Email";
+      $location = "signup.php";
+      $ms = "error";
+		  is_empty($em, $text, $location, $ms, $user_input);
+
       $pas = password_hash($_POST['txtpassword'], PASSWORD_DEFAULT);
 
       $stmt = $conn->prepare("select * from users where email = ?");
@@ -47,6 +62,12 @@
 <div class = "d-flex justify-content-center align-items-center" style = "min-height: 100vh">
     <form class = "p-5 rounded shadow" style="max-width: 30rem; width:100%" method = "POST" action = "">
     <h1 class = "text-center display-4 pb-5">REGISTER</h1>
+    <?php if (isset($_GET['error'])) { #Alert incorrect atau dll
+        ?> 
+        <div class = "alert alert-danger" role = "alert">
+          <?= htmlspecialchars($_GET['error']); ?>
+        </div> 
+      <?php } ?>
       <div class="mb-3">
         <label for="exampleInputName" class="form-label">Full Name</label>
         <input type="text" class="form-control" name = "txtfullname" id="exampleInputName">
@@ -64,18 +85,13 @@
       <button type="submit" class="btn btn-primary" name='btnregister'>Register User</button>
       
       <!-- Balikin ke toko -->
-      <a href = "index.php">Login</a> 
+      <a class = "btn btn-primary" href = "login.php">Login</a> 
+      <a class = "btn btn-danger" href = "index.php">Cancel</a> 
       <!-- Cara buat encrypt pass, ambil di web 
        terus masukin pass yang udah di encrypt(jangan keambil spasinya) di database klen-->
 
        <!-- <'?'php echo password_hash("123", PASSWORD_DEFAULT)?> -->
         <!-- abaikan '' di ? soalnya ga bisa komen klo gada '' -->
-      <?php if (isset($_GET['error'])) { #Alert incorrect atau dll
-        ?> 
-        <div class = "alert alert-danger" role = "alert">
-          <?= htmlspecialchars($_GET['error']); ?>
-        </div> 
-      <?php } ?>
     </form>
   </div>
 </body>

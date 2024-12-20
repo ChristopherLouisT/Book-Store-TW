@@ -77,11 +77,6 @@ if (isset($_SESSION['user_id']) &&
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
 					<a class="nav-link text-light rounded fw-bolder" 
-						aria-current="page" 
-						href="index.php">Store</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder" 
 						href="add-book.php">Add Book</a>
 					</li>
 					<li class="nav-item">

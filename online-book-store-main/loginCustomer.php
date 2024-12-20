@@ -56,7 +56,7 @@ if (!isset($_SESSION['user_id']) &&
 		  <button type="submit" 
 		          class="btn btn-primary">
 		          Login</button>
-		   <a href="index.php">Store</a>
+		   <a class = "btn btn-primary" href="index.php">Store</a>
 		</form>
 	</div>
 </body>
