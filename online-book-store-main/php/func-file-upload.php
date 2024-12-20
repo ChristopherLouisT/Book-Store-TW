@@ -16,18 +16,11 @@ function upload_file($files, $allowed_exs, $path){
 	  $file_ex_lc = strtolower($file_ex);
 
 		if (in_array($file_ex_lc, $allowed_exs)) {
-			/** 
-			renaming the  file 
-			with random strings
-			**/
 			$new_file_name = uniqid("",true).'.'.$file_ex_lc;
 
 			# assigning upload path
 			$file_upload_path = '../uploads/'.$path.'/'.$new_file_name;
-			/** 
-			  moving uploaded file to 
-			  root directory upload/$path folder
-			**/
+
 			move_uploaded_file($tmp_name, $file_upload_path);
 
             $sm['status'] = 'success';
@@ -45,7 +38,7 @@ function upload_file($files, $allowed_exs, $path){
 		}
    }else {
       $em['status'] = 'error';
-      $em['data']   = 'Error occurred while uploading!';
+      $em['data']   = 'Error occurred while uploading or the file is empty!';
 
       #  Return the em array
       return $em;

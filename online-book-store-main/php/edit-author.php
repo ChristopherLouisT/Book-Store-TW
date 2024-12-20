@@ -10,17 +10,9 @@ if (isset($_SESSION['user_id']) &&
 	$cnt = new Connection();
 	$conn = $cnt->getConn();
 
-
-    /** 
-	  check if author 
-	  name is submitted
-	**/
 	if (isset($_POST['author_name']) &&
         isset($_POST['author_id'])) {
-		/** 
-		Get data from POST request 
-		and store them in var
-		**/
+
 		$name = $_POST['author_name'];
 		$id = $_POST['author_id'];
 
@@ -37,10 +29,6 @@ if (isset($_SESSION['user_id']) &&
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$name, $id]);
 
-			/**
-		      If there is no error while 
-		      inserting the data
-		    **/
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully updated!";

@@ -26,11 +26,7 @@ if (isset($_SESSION['user_id']) &&
 			         WHERE id=?";
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$name, $id]);
-
-			/**
-		      If there is no error while 
-		      updating the data
-		    **/
+			
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully updated!";

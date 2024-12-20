@@ -25,10 +25,6 @@ if (isset($_SESSION['user_id']) &&
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$id]);
 
-			/**
-		      If there is no error while 
-		      Deleting the data
-		    **/
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully removed!";

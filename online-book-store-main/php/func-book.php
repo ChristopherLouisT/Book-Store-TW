@@ -2,7 +2,7 @@
 
 # Get My Books 
 function get_my_books($con){
-   $sql  = "SELECT * FROM books WHERE id in (SELECT book_id FROM buybook WHERE user_id = {$_SESSION['user_id']}) ORDER bY id DESC";
+   $sql  = "SELECT * FROM books WHERE id in (SELECT book_id FROM buybook WHERE user_id = {$_SESSION['user_id']}) ORDER by id DESC";
    $stmt = $con->prepare($sql);
    $stmt->execute();
 

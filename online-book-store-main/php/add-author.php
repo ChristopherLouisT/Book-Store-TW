@@ -11,15 +11,7 @@ if (isset($_SESSION['user_id']) &&
 	$conn = $cnt->getConn();
 
 
-    /** 
-	  check if author 
-	  name is submitted
-	**/
 	if (isset($_POST['author_name'])) {
-		/** 
-		Get data from POST request 
-		and store it in var
-		**/
 		$name = $_POST['author_name'];
 
 		#simple form Validation
@@ -33,11 +25,7 @@ if (isset($_SESSION['user_id']) &&
 			         VALUES (?)";
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$name]);
-
-			/**
-		      If there is no error while 
-		      inserting the data
-		    **/
+			
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully created!";

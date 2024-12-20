@@ -10,16 +10,7 @@ if (isset($_SESSION['user_id']) &&
 	$cnt = new Connection();
 	$conn = $cnt->getConn();
 
-
-    /** 
-	  check if category 
-	  name is submitted
-	**/
 	if (isset($_POST['category_name'])) {
-		/** 
-		Get data from POST request 
-		and store it in var
-		**/
 		$name = $_POST['category_name'];
 
 		#simple form Validation
@@ -34,10 +25,6 @@ if (isset($_SESSION['user_id']) &&
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$name]);
 
-			/**
-		      If there is no error while 
-		      inserting the data
-		    **/
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully created!";

@@ -26,10 +26,6 @@ if (isset($_SESSION['user_id']) &&
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$name]);
 
-			/**
-		      If there is no error while 
-		      inserting the data
-		    **/
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully created!";
