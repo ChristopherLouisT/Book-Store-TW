@@ -23,8 +23,8 @@ $categories = get_all_categories($conn);
 
 # CSS helper
 include "css/style-bookstore.php";
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@ include "css/style-bookstore.php";
 
 	<div class="container">
 		<div class = "row">
-			<?php include("menunavbarCust.php"); ?>
+			<?php include("menunavbar.php"); ?>
 		</div>
 		<div class = "row g-0 mt-5">
 			<form action="search.php"
@@ -117,8 +117,10 @@ include "css/style-bookstore.php";
 								<br></b>
 								<?=substr($book['description'], 0, 100) . "...";?>
 							</p>
-							<a href="detail.php?id=<?=$book['id']?>"
-							class="btn btn-success">Detail Book</a>
+							<?php if (isset($_SESSION['user_id'])) {?>
+								<a href="detail.php?id=<?=$book['id']?>"
+								class="btn btn-success">Detail Book</a>
+								<?php }?>
 						</div>
 					</div>
 

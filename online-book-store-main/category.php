@@ -159,8 +159,10 @@ include "css/style-bookstore.php";
 								<br></b>
 								<?= substr($book['description'], 0, 100) . "..."; ?>
 							</p>
-							<a href="detail.php?id=<?=$book['id']?>"
-							class="btn btn-success">Buy Book</a>
+							<?php if (isset($_SESSION['user_id'])) {?>
+								<a href="detail.php?id=<?=$book['id']?>"
+								class="btn btn-success">Detail Book</a>
+								<?php }?>
 						</div>
 					</div>
 					

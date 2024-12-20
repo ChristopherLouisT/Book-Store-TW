@@ -50,7 +50,7 @@ include "css/style-bookstore.php";
 <body>
 	<div class="container">
 		<div class = "row">
-			<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light fw-bolder" href="index.php">Online Book Store</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,15 +65,6 @@ include "css/style-bookstore.php";
 						href="index.php">Store</a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						href="#">Contact</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link text-light rounded fw-bolder"
-						href="#">About</a>
-					</li>
-
-					<li class="nav-item">
 					<?php if (isset($_SESSION['user_id'])) {?>
 						<a class="nav-link text-light rounded fw-bolder"
 						href="logoutCustomer.php">Logout</a>
@@ -86,7 +77,7 @@ include "css/style-bookstore.php";
 					<li class="nav-item">
 					<?php if (isset($_SESSION['user_id'])) {?>
 						<a class="nav-link text-light rounded fw-bolder"
-						href="#">Profile</a>
+						href="profile.php">Profile</a>
 					<?php } else {?>
 					<a class="nav-link text-light rounded fw-bolder"
 						href="loginCustomer.php">Login</a>
