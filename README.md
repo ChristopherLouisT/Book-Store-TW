@@ -1,4 +1,11 @@
 # Book-Store-TW
+Anggota Kelompok : 
+1. Joice Josephine Christiana
+2. Evelyn Aurellia
+3. Christopher Louis Tansi
+4. Joshua Chandra
+5. Kenjiro Chen
+
 SETIAP KALI PULL ATAU AMBIL, SIMPEN DALAM XAMPP HTDOCS ATAU GA BAKALAN BISA          
 Link Admin: localhost/nama_file/online-book-store-main/admin.php
 
